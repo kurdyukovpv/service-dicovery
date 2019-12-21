@@ -1,0 +1,26 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /client
+
+spring:
+  application:
+    admin:
+      enabled: true
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8090/admin"
+        instance:
+          prefer-ip: true
+          name: client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+hystrix:
+  metrics:
+    enabled: true

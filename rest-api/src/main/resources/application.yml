@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    admin:
+      enabled: true
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8090/admin"
+        instance:
+          prefer-ip: true
+          name: rest-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+info:
+  app:
+    name: rest-api-1
